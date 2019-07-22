@@ -1,0 +1,40 @@
+@import "../../../styles/index";
+
+:host {
+
+  > div {
+
+    margin: 0 0 5px 0;
+    padding: 5px;
+    max-width: 192px;
+    background-color: antiquewhite;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    align-items: center;
+
+    @extend #{
+      '.flex-container',
+      '.flex-row',
+      '.box-radius'
+    };
+
+    > span:first-child {
+      margin-right: 5px;
+    }
+
+    > span:nth-child(2) {
+      @extend #{'.ellipsis'};
+      margin-right: 7px;
+    }
+
+    .flaticon-pencil-edit-button {
+      margin-right: 10px;
+    }
+
+    .flaticon-cancel-button {
+      &::before {
+        font-size: 21px !important;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,29 @@
+<mat-form-field [formGroup]="group">
+  <input
+    matInput
+    [required]="formService.isRequired(input, validators)"
+    [type]="input.type"
+    [min]="input.min"
+    [max]="input.max"
+    [minlength]="getInputMinLength()"
+    [maxlength]="getInputMaxLength()"
+    [placeholder]="input.placeholder"
+    [readonly]="input.readonly"
+    [formControlName]="field.formControlName"
+    [matAutocomplete]="auto"
+    (focus)="onFocus($event.target.value)"
+    (blur)="onBlur($event.target.value)">
+  <mat-autocomplete autoActiveFirstOption
+                    #auto="matAutocomplete"
+                    [displayWith]="field.autoComplete != null && displayWith"
+                    (optionSelected)="optionSelected($event.option.value)">
+
+    <mat-option
+      *ngFor="let entity of (field.autoComplete != null ? (field.autoComplete.filteredEntities[filteredEntitiesIndex] | async) : [])"
+      [value]="entity"
+      [attr.title]="entity">
+      {{entity.autoComplete.displayText}}
+    </mat-option>
+  </mat-autocomplete>
+  <mat-error *ngIf="validators != null"><app-form-error [control]="formControl" [validators]="validators"></app-form-error></mat-error>
+</mat-form-field>

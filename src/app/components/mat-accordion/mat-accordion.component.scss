@@ -1,0 +1,55 @@
+@import "../../styles/index";
+
+:host {
+
+  .padding-left {
+    padding-left: 20px !important;
+  }
+
+  .margin-left {
+    margin-left: 20px !important;
+  }
+
+  .badged {
+    background-color: #F1F1F1;
+    border-radius: 100px;
+    padding: 5px 10px;
+  }
+
+  mat-accordion {
+    width: 100%;
+  }
+
+  mat-expansion-panel-header {
+
+  }
+
+}
+
+::ng-deep {
+
+  .mat-content,
+  .mat-expansion-panel-body,
+  .mat-expansion-indicator {
+    @extend #{'.common-font-style'};
+  }
+
+  .mat-content {
+    padding-right: 25px;
+  }
+
+  .mat-expansion-indicator {
+    &::after {
+      @extend #{'.common-font-style'};
+    }
+  }
+
+}
+
+:host-context(.light) {
+
+}
+
+:host-context(.dark) {
+}
+

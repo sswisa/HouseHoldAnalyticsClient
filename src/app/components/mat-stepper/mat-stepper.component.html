@@ -1,0 +1,27 @@
+<mat-vertical-stepper [linear]="false" #stepper>
+  <ng-template matStepperIcon="edit" let-index="index">
+    <!--<i class="flaticon-danger"></i>-->
+  </ng-template>
+  <!--<ng-container *ngIf="test(formGroups) && formGroups[0].formGroupName">-->
+  <mat-step *ngFor="let step of configurations[stepperName]; let i = index" [stepControl]="step.formGroups[step.formGroupNames[0]]" [label]="step.title">
+    <form [formGroup]="step.formGroups[step.formGroupNames[0]]">
+      <ng-container *ngFor="let field of step.fields">
+        <app-form-field [field]="field" [group]="step.formGroups[step.formGroupNames[0]]" [filteredEntitiesIndex]="0"></app-form-field>
+        <app-form-array-field *ngIf="formService.isArrayControlField(field)" [formArrayName]="formControlNames.array" [field]="field" [step]="step"></app-form-array-field>
+      </ng-container>
+      <div><button mat-button matStepperNext>Next</button></div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    You are now done.
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+
+</mat-vertical-stepper>
+
+
+<!--!isFormVisible(step, field, j) && !isLastForm(step, field, j)" -->

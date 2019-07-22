@@ -1,0 +1,19 @@
+<mat-form-field [formGroup]="group">
+  <mat-select [required]="formService.isRequired(select, validators)"
+              (selectionChange)="select.onSelectOptionChange != null && select.onSelectOptionChange($event.value, group)"
+              [formControlName]="field.formControlName"
+              [multiple]="select.multiple"
+              [placeholder]="select.placeholder">
+    <mat-select-trigger *ngIf="select.multiple">
+      {{formControl.value ? formControl.value[0] : ''}}
+      <span *ngIf="formControl.value?.length > 1" class="example-additional-selection">
+        (+{{formControl.value.length - 1}} {{formControl.value?.length === 2 ? 'other' : 'others'}})
+      </span>
+    </mat-select-trigger>
+    <mat-option *ngFor="let option of select.options.arr"
+                [value]="option">
+      {{ select.displayWith(select.options.object, option) }}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="validators != null"><app-form-error *ngIf="validators != null" [control]="formControl" [validators]="validators"></app-form-error></mat-error>
+</mat-form-field>

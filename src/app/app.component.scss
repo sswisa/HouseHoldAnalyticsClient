@@ -1,0 +1,60 @@
+@import "styles/index";
+
+:host {
+
+  min-height: 100vh;
+
+  > div {
+    @extend #{
+      '.flex-container',
+      '.flex-item'
+    };
+    padding: 30px 40px;
+  }
+
+  main {
+    @extend #{
+      '.flex-container',
+      '.flex-column',
+      '.flex-item'
+    };
+    order: 2;
+
+    > header {
+      @extend #{
+        '.flex-container'
+      };
+      padding: 1em;
+    }
+
+    > main {
+      @extend #{
+        '.flex-container',
+        '.flex-row',
+        '.flex-item'
+      };
+
+      justify-content: space-between;
+    }
+  }
+
+  nav {
+    ul {
+      li {
+        display: inline-block;
+        list-style-type: none;
+        padding: 0 5px;
+        cursor: pointer;
+        color: #333333;
+      }
+    }
+  }
+}
+
+:host-context(.light) {
+  background-color: $lightGrey-background-color;
+}
+
+:host-context(.dark) {
+
+}

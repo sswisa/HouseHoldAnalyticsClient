@@ -1,0 +1,18 @@
+@import "./assets/flaticon/font/flaticon.css";
+@import "./app/styles/index";
+
+html, body {
+
+  @extend #{
+    '.no-spacing',
+    '.common-font-style'
+  };
+
+}
+
+app-root {
+  @extend #{
+    '.flex-container',
+    '.flex-column'
+  };
+}

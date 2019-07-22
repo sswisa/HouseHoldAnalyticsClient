@@ -1,0 +1,50 @@
+@import "../../styles/index";
+
+:host {
+
+  @extend #{
+    '.box-shadow',
+    '.box-radius'
+  };
+
+  order: 1;
+  padding: 20px 0;
+  margin: 0 30px 0 0;
+
+  nav {
+
+  }
+
+  li {
+    line-height: 39px;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    padding: 0.1em 3em 0.1em 2em;
+  }
+
+  i {
+    font-size: 30px;
+  }
+
+  span {
+    padding: 0 0 0 20px;
+  }
+
+}
+
+:host-context(.light) {
+  background-color: #FFF;
+
+  li {
+    &:hover {
+      background-color: rgba(#333, 0.03);
+    }
+  }
+}
+
+:host-context(.dark) {
+
+}

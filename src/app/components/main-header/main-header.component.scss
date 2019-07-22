@@ -1,0 +1,19 @@
+@import "../../styles/index";
+
+:host {
+  header {
+    @extend #{
+      '.flex-container'
+    };
+    padding: 1.5em;
+  }
+}
+
+:host-context(.light) {
+  background-color: $dark-background-color;
+  color: $dark-color-focused;
+}
+
+:host-context(.dark) {
+
+}

@@ -1,0 +1,13 @@
+<ng-container>
+  {{ field.title }}
+  <ng-container *ngFor="let group of getArrayForms(step); let j = index">
+    <form [hidden]="isFormHidden(step, field, j)" [formGroup]="group" style="background-color: #F1F1F1">
+      <ng-container *ngFor="let item of field.fields">
+        <app-form-field [field]="item" [group]="group" [filteredEntitiesIndex]="j"></app-form-field>
+      </ng-container>
+      <button (click)="addItem(step, field, j)">Done</button>
+    </form>
+    <app-form-group-collapsed [hidden]="isFormVisible(step, field, j)" [field]="field" [group]="group" [groupName]="getGroupName(field, j)" (editForm)="onEditForm($event, field, step)" (deleteForm)="onDeleteForm($event)"></app-form-group-collapsed>
+  </ng-container>
+  <button [hidden]="isButtonHidden(step, field)" (click)="showForm(field, null)">Add Item</button>
+</ng-container>

@@ -1,0 +1,7 @@
+<p>{{ buttonToggle.label }}</p>
+<mat-button-toggle-group [name]="buttonToggle.toggleGroupName" [vertical]="buttonToggle.vertical" (valueChange)="onValueChange($event)">
+  <mat-button-toggle *ngFor="let item of buttonToggle.options.arr"
+                     [value]="item"
+                     [checked]="item === buttonToggle.defaultValue"
+                     [disableRipple]="buttonToggle.disableRipple">{{ item }}</mat-button-toggle>
+</mat-button-toggle-group>

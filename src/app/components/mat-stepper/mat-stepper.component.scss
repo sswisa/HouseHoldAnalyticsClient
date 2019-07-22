@@ -1,0 +1,62 @@
+@import "../../styles/index";
+
+:host {
+  mat-vertical-stepper {
+    i {
+      &:before {
+        font-size: 16px;
+        margin-left: 0;
+      }
+    }
+  }
+
+}
+
+::ng-deep{
+  .mat-vertical-stepper-content {
+    display: table-caption;
+  }
+
+  mat-form-field .mat-form-field {
+    &-underline {
+      position: relative;
+      top: 0em;
+    }
+    &-subscript-wrapper {
+      position: static;
+    }
+  }
+  //
+  //mat-step-header .mat-step-label {
+  //  overflow: visible;
+  //}
+  //
+  //mat-step-header .mat-step-icon-not-touched span,
+  //mat-step-header .mat-step-icon span,
+  //mat-step-header .mat-step-icon-not-touched .mat-icon,
+  //mat-step-header .mat-step-icon .mat-icon {
+  //  display: none;
+  //}
+  //
+  //mat-step-header:nth-of-type(1) .mat-step-icon-not-touched:after,
+  //mat-step-header:nth-of-type(1) .mat-step-icon:after {
+  //  font-family: Flaticon;
+  //  content: "\f116";
+  //  font-size: 20px;
+  //  font-style: normal;
+  //}
+  //
+  //.active-step-1 mat-step-header:nth-of-type(1) .mat-step-icon-not-touched::after,
+  //.active-step-1 mat-step-header:nth-of-type(1) .mat-step-icon::after {
+  //  content: 'add_circle' !important; /* name of the material icon */
+  //  font-family: 'Material Icons' !important;
+  //  font-feature-settings: 'liga' 1;
+  //}
+}
+
+:host-context(.light) {
+
+}
+
+:host-context(.dark) {
+}

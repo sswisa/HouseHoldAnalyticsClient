@@ -1,0 +1,43 @@
+.flex-container {
+  display: flex;
+}
+
+.flex-item {
+  flex: 1;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.stretch-content {
+  align-content: stretch;
+}
+
+.stretch-items {
+  align-items: stretch;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.no-shrink {
+  flex-shrink: 0;
+}

@@ -1,0 +1,20 @@
+<mat-accordion *ngIf="transactionsObservable | async as transactions; else empty">
+
+  <mat-expansion-panel *ngFor="let transaction of transactions">
+    <mat-expansion-panel-header>
+      {{ transaction.vendor[0].displayText }} - {{ transaction.person[0].name.first }} {{ transaction.person[0].name.last }}
+      <span *ngFor="let category of transaction.category" [attr.title]="transactionCategories[category.toLowerCase()].title" [ngClass]="transactionCategories[category.toLowerCase()].class.fill"></span>
+      <span [ngClass]="[paymentMethodClass[transaction.payment[0].method], 'bold']" [attr.title]="transaction.payment[0].card.type"></span>
+      <span [attr.title]="transaction.severity + ' severity'" [ngClass]="[transaction.severity.toLowerCase() + '-severity', 'flaticon-danger']"></span>
+      <span class="padding-left">{{ transaction.date[0] }}</span>
+      <span class="margin-left badged">
+        <span >{{ transaction.payment[0].amount }}</span>
+        <span>{{ currencySymbol[transaction.payment[0].currency] }}</span>
+      </span>
+    </mat-expansion-panel-header>
+    This the expansion 1 content
+  </mat-expansion-panel>
+
+</mat-accordion>
+
+<ng-template #empty>No transactions yet</ng-template>

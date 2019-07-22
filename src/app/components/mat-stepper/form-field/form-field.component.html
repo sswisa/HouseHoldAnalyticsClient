@@ -1,0 +1,5 @@
+<app-form-input-autocomplete *ngIf="field.input != null && !(field.datePicker != null)" [group]="group" [field]="field" [filteredEntitiesIndex]="filteredEntitiesIndex"></app-form-input-autocomplete>
+<app-form-input-select *ngIf="field.select != null" [group]="group" [field]="field"></app-form-input-select>
+<app-form-input-datepicker *ngIf="field.datePicker != null" [group]="group" [field]="field"></app-form-input-datepicker>
+<app-form-button-toggle *ngIf="field.buttonToggle != null" [group]="group" [field]="field"></app-form-button-toggle>
+<app-form-slide-toggle *ngIf="field.slideToggle != null" [group]="group" [field]="field"></app-form-slide-toggle>

@@ -1,0 +1,27 @@
+@import "../../styles/index";
+
+:host {
+
+  @extend #{
+      '.box-shadow',
+      '.box-radius'
+    };
+
+  padding: 10px;
+}
+
+:host-context(.light) {
+  background-color: $light-background-color;
+  color: $light-color;
+}
+
+:host-context(.dark) {
+  background-color: $dark-background-color;
+  color: $dark-color;
+}
+
+:host-context(.light-grey){
+  background-color: #ffffff;
+  color: $lightGrey-color;
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+}

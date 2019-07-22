@@ -1,0 +1,20 @@
+@import "../../styles/index";
+
+:host {
+
+  footer {
+    @extend #{
+      '.flex-container'
+    };
+    padding: 1em;
+  }
+
+}
+
+:host-context(.light) {
+  background-color: #FFF;
+}
+
+:host-context(.dark) {
+
+}
